@@ -216,6 +216,8 @@ au BufNewFile,BufRead *.go setlocal noet ts=4 sw=4 sts=4
 
 colorscheme PaperColor
 
+set guicursor=n-v-c-sm:block,i-ci-ve:ver50-Cursor,r-cr-o:hor30,a:Cursor-blinkon100-blinkoff50-blinkwait200
+
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
