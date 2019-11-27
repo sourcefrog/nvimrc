@@ -4,6 +4,7 @@ filetype off
 call plug#begin(stdpath('data') . '/plugged')
 Plug 'rust-lang/rust.vim'
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'nanotech/jellybeans.vim'
 Plug 'vim-syntastic/syntastic'
 Plug 'NLKNguyen/papercolor-theme'
@@ -215,6 +216,8 @@ imap <S-Insert> "+p
 au BufNewFile,BufRead *.go setlocal noet ts=4 sw=4 sts=4
 
 colorscheme PaperColor
+
+let g:airline_theme='papercolor'
 
 set guicursor=n-v-c-sm:block,i-ci-ve:ver50-Cursor,r-cr-o:hor30,a:Cursor-blinkon100-blinkoff50-blinkwait200
 
