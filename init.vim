@@ -11,6 +11,13 @@ Plug 'NLKNguyen/papercolor-theme'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'kien/ctrlp.vim'
+Plug 'majutsushi/tagbar'
+
+" easytags is unmaintained and doesn't seem to work well with universal-ctags. 
+" Plug 'xolox/vim-misc'
+" Plug 'xolox/vim-easytags'
+Plug 'universal-ctags/ctags'
+Plug 'ludovicchabant/vim-gutentags'
 call plug#end()
 
 filetype plugin indent on
