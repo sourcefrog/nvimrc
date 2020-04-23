@@ -17,8 +17,8 @@ Plug 'dag/vim-fish'
 " easytags is unmaintained and doesn't seem to work well with universal-ctags. 
 " Plug 'xolox/vim-misc'
 " Plug 'xolox/vim-easytags'
-Plug 'universal-ctags/ctags'
-Plug 'ludovicchabant/vim-gutentags'
+" Plug 'universal-ctags/ctags'
+" Plug 'ludovicchabant/vim-gutentags'
 call plug#end()
 
 filetype plugin indent on
