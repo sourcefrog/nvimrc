@@ -232,9 +232,12 @@ let g:airline_theme='papercolor'
 set guicursor=n-v-c-sm:block,i-ci-ve:ver50-Cursor,r-cr-o:hor30,a:Cursor-blinkon100-blinkoff50-blinkwait200
 
 let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
+" 2 = auto close location list when no errors, but don't automatically open
+let g:syntastic_auto_loc_list = 2
+let g:syntastic_check_on_open = 0
+let g:syntastic_cursor_columns = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_auto_jump = 0
 
 let g:rustfmt_autosave = 1
 let g:rust_cargo_check_tests = 1
