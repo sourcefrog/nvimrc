@@ -246,3 +246,10 @@ let g:rustfmt_autosave = 1
 let g:rust_cargo_check_tests = 1
 let g:rust_cargo_check_benches = 1
 let g:rust_cargo_check_examples = 1
+
+let g:ctrlp_prompt_mappings = {
+    \ 'PrtCurLeft()':         ['<c-h>', '<c-^>'],
+    \ 'PrtCurRight()':        ['<c-l>'],
+    \ 'ToggleType(1)':        ['<c-f>', '<c-up>', '<right>'],
+    \ 'ToggleType(-1)':       ['<c-b>', '<c-down>', '<left>'],
+    \ }
