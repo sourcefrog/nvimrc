@@ -68,7 +68,10 @@ set suffixes+=.beam
 set timeout& ttimeout&
 set whichwrap=b,s,[,],<,>    " let arrows wrap around end of line
 set wildignore+=*.py[co],*~
-set wildignore+=*/target/debug,*/target/release
+set wildignore+=*/target/debug/*
+set wildignore+=*/target/rls/*
+set wildignore+=*/target/doc/*
+set wildignore+=*/target/release/*
 set wildmenu
 set wildmode=longest:full,full
 set nowrapscan
