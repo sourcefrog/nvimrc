@@ -247,6 +247,7 @@ let g:rust_cargo_check_tests = 1
 let g:rust_cargo_check_benches = 1
 let g:rust_cargo_check_examples = 1
 
+let g:ctrlp_switch_buffer = 'Et'
 let g:ctrlp_prompt_mappings = {
     \ 'PrtCurLeft()':         ['<c-h>', '<c-^>'],
     \ 'PrtCurRight()':        ['<c-l>'],
