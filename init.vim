@@ -72,6 +72,7 @@ set wildignore+=*/target/debug/*
 set wildignore+=*/target/rls/*
 set wildignore+=*/target/doc/*
 set wildignore+=*/target/release/*
+set wildignore+=*/.git/*
 set wildmenu
 set wildmode=longest:full,full
 set nowrapscan
