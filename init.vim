@@ -66,9 +66,11 @@ set showmatch
 set showmode
 set suffixes+=.beam
 set timeout& ttimeout&
+set updatetime=100
 set whichwrap=b,s,[,],<,>    " let arrows wrap around end of line
 set wildignore+=*.py[co],*~
 set wildignore+=*/target/debug/*
+set wildignore+=*/target/package/*
 set wildignore+=*/target/rls/*
 set wildignore+=*/target/doc/*
 set wildignore+=*/target/release/*
