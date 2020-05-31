@@ -108,6 +108,9 @@ autocmd BufRead *.txt setlocal formatoptions=t tw=74
 
 autocmd FileType erlang setlocal sts=4 et tw=72 fo+=oc comments=:%%%,:%%,:%
 
+au WinLeave * set nocursorline nocursorcolumn
+au WinEnter * set cursorline cursorcolumn
+
 " default of going to ex mode not very useful, so instead Q formats text
 map Q gq
 
