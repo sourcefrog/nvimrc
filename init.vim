@@ -167,6 +167,9 @@ match MergeMarker /^[<=>\|]\{7\}\( [A-Z]\+\)?$/
 highlight LineNr cterm=none
 highlight Folded cterm=none
 
+au WinLeave * set nocursorline nocursorcolumn
+au WinEnter * set cursorline cursorcolumn
+
 if &term == "screen"
 	set t_ts=]2;
 	set t_fs=
