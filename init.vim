@@ -14,6 +14,7 @@ Plug 'kien/ctrlp.vim'
 Plug 'majutsushi/tagbar'
 Plug 'dag/vim-fish'
 Plug 'tpope/vim-commentary'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " easytags is unmaintained and doesn't seem to work well with universal-ctags. 
 " Plug 'xolox/vim-misc'
