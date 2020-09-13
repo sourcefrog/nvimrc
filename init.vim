@@ -5,18 +5,18 @@ call plug#begin(stdpath('data') . '/plugged')
 Plug 'rust-lang/rust.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'nanotech/jellybeans.vim'
+" Plug 'nanotech/jellybeans.vim'
 Plug 'vim-syntastic/syntastic'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
-Plug 'kien/ctrlp.vim'
-Plug 'majutsushi/tagbar'
+Plug 'ctrlpvim/ctrlp.vim'
+" Plug 'majutsushi/tagbar'
 Plug 'dag/vim-fish'
 Plug 'tpope/vim-commentary'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-" easytags is unmaintained and doesn't seem to work well with universal-ctags. 
+" easytags is unmaintained and doesn't seem to work well with universal-ctags.
 " Plug 'xolox/vim-misc'
 " Plug 'xolox/vim-easytags'
 " Plug 'universal-ctags/ctags'
@@ -25,32 +25,26 @@ call plug#end()
 
 filetype plugin indent on
 
-if filereadable("/usr/share/vim/google/google.vim")
-  source /usr/share/vim/google/google.vim
-
-  Glug youcompleteme-google
-  Glug blaze
-endif
-
-" set laststatus=2		" always show split line even with one window
+" set laststatus=2              " always show split line even with one window
 set autoread
 set autowrite
 set autowriteall
 set backspace=indent,eol,start
 set backupcopy=auto,breakhardlink
-set cdpath=,~,~/bzr,~/work,..,./tests/
+set cdpath=,~,~/src,..
+set cmdheight=2
 if version >= 700 && has("insert_expand")
-	set completeopt=menu,preview
+        set completeopt=menu,preview
 endif
 " set dir=~/.vimswap
 set display=lastline " show as much as will fit on last line, not just '@'
 set expandtab
-set noequalalways
+" set noequalalways
 set foldmethod=indent nofoldenable
 set foldminlines=4
 set history=1000
 nohlsearch " don't show whatever we were looking for last time until we search again
-set nohlsearch
+set hlsearch
 set incsearch
 set linebreak
 set nowrapscan
@@ -65,6 +59,7 @@ set showbreak=
 set noshowcmd
 set showmatch
 set showmode
+" set shortmess+=c
 set suffixes+=.beam
 set timeout& ttimeout&
 set updatetime=100
@@ -78,7 +73,7 @@ set wildignore+=*/target/release/*
 set wildignore+=*/.git/*
 set wildmenu
 set wildmode=longest:full,full
-set nowrapscan
+set wrapscan
 set belloff=showmatch,esc
 
 set rulerformat=%19(%03P\ %5l/%-5L\ %3v%)
@@ -113,6 +108,7 @@ autocmd FileType erlang setlocal sts=4 et tw=72 fo+=oc comments=:%%%,:%%,:%
 
 au WinLeave * set nocursorline nocursorcolumn
 au WinEnter * set cursorline cursorcolumn
+set cursorline cursorcolumn
 
 " default of going to ex mode not very useful, so instead Q formats text
 map Q gq
@@ -172,13 +168,13 @@ au WinLeave * set nocursorline nocursorcolumn
 au WinEnter * set cursorline cursorcolumn
 
 if &term == "screen"
-	set t_ts=]2;
-	set t_fs=
-	set title
+        set t_ts=]2;
+        set t_fs=
+        set title
 endif
 
 if $USER != "root"
-	set modeline
+        set modeline
 endif
 
 " Use global as grep application
@@ -194,16 +190,16 @@ nmap <F5> :make
 set background=dark
 
 function! SlowTerminal()
-	set noruler noshowcmd noshowmode nottyfast
-	syntax off
-	set cpoptions+=$
+        set noruler noshowcmd noshowmode nottyfast
+        syntax off
+        set cpoptions+=$
 endfunction
 
 highlight Pmenu ctermbg=blue cterm=NONE
 highlight PmenuSel ctermbg=yellow cterm=bold ctermfg=blue
 
 if has("spell")
-	set spellfile=~/.vimspell.utf-8.add
+        set spellfile=~/.vimspell.utf-8.add
 endif
 
 " Bazaarversion control
@@ -222,11 +218,11 @@ imap  <Home>
 imap  <End>
 
 function! PatchReviewMode()
-	match Comment /^ .*/
-	colorscheme morning
-	highlight diffAdded guifg=#080
-	highlight diffRemoved guifg=#600
-	highlight Comment guifg=#444
+        match Comment /^ .*/
+        colorscheme morning
+        highlight diffAdded guifg=#080
+        highlight diffRemoved guifg=#600
+        highlight Comment guifg=#444
 endfunction
 
 set runtimepath+=~/.vim.d/*
@@ -264,3 +260,39 @@ let g:ctrlp_prompt_mappings = {
     \ 'ToggleType(1)':        ['<c-f>', '<c-up>', '<right>'],
     \ 'ToggleType(-1)':       ['<c-b>', '<c-down>', '<left>'],
     \ }
+
+""""""""""""""""""""""""""""""""""""""""""""""""""
+" for vim-coc, from https://github.com/neoclide/coc.nvim
+
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Use <c-space> to trigger completion.
+if has('nvim')
+  inoremap <silent><expr> <c-space> coc#refresh()
+else
+  inoremap <silent><expr> <c-@> coc#refresh()
+endif
+
+" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
+" position. Coc only does snippet and additional edit on confirm.
+" <cr> could be remapped by other vim plugin, try `:verbose imap <CR>`.
+if exists('*complete_info')
+  inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+else
+  inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+endif
+
+" Use `[g` and `]g` to navigate diagnostics
+" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
