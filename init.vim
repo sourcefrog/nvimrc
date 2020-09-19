@@ -296,3 +296,6 @@ endif
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+nmap <leader>rn <Plug>(coc-rename)
+
