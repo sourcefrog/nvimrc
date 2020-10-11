@@ -3,8 +3,8 @@ filetype off
 
 call plug#begin(stdpath('data') . '/plugged')
 Plug 'rust-lang/rust.vim'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+" Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline-themes'
 " Plug 'nanotech/jellybeans.vim'
 Plug 'vim-syntastic/syntastic'
 Plug 'NLKNguyen/papercolor-theme'
