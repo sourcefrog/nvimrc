@@ -258,13 +258,18 @@ let g:rust_cargo_check_tests = 1
 let g:rust_cargo_check_benches = 1
 let g:rust_cargo_check_examples = 1
 
-let g:ctrlp_switch_buffer = 'Et'
+let g:ctrlp_switch_buffer = ''
 let g:ctrlp_prompt_mappings = {
     \ 'PrtCurLeft()':         ['<c-h>', '<c-^>'],
     \ 'PrtCurRight()':        ['<c-l>'],
     \ 'ToggleType(1)':        ['<c-f>', '<c-up>', '<right>'],
     \ 'ToggleType(-1)':       ['<c-b>', '<c-down>', '<left>'],
     \ }
+" Only cache in big directories, otherwise it's annoying when a file is
+" added.
+let g:ctrlp_use_caching = 10000
+" let g:ctrlp_extensions = ['tag', 'buffertag', 'quickfix', 'dir', 'rtscript', 'undo', 'line', 'changes', 'mixed', 'bookmarkdir']
+let g:ctrlp_extensions = ['quickfix', 'dir', 'undo', 'line', 'changes', 'mixed', 'bookmarkdir', 'autoignore']
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " for vim-coc, from https://github.com/neoclide/coc.nvim
