@@ -2,6 +2,7 @@ set nocompatible              " be iMproved, required
 filetype off
 
 call plug#begin(stdpath('data') . '/plugged')
+Plug 'tpope/vim-sensible'
 Plug 'rust-lang/rust.vim'
 " Plug 'vim-airline/vim-airline'
 " Plug 'vim-airline/vim-airline-themes'
@@ -10,6 +11,8 @@ Plug 'vim-syntastic/syntastic'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
 Plug 'ctrlpvim/ctrlp.vim'
 " Plug 'majutsushi/tagbar'
 Plug 'dag/vim-fish'
