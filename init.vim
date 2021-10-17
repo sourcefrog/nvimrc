@@ -60,7 +60,7 @@ set scrolljump=-25
 set scrolloff=2
 set shiftround
 set showbreak=
-set noshowcmd
+set showcmd
 set showmatch
 set showmode
 " set shortmess+=c
