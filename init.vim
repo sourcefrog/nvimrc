@@ -47,6 +47,7 @@ nohlsearch " don't show whatever we were looking for last time until we search a
 set hlsearch
 set incsearch
 set linebreak
+set mouse=a
 set nowrapscan
 set number
 " set numberwidth=8
