@@ -86,7 +86,7 @@ set rulerformat=%19(%03P\ %5l/%-5L\ %3v%)
 let &statusline = &rulerformat . "  %f  #%n\ %m%w%h%y%r "
 
 set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
 " show arrows in current split marker
