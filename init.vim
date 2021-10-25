@@ -56,6 +56,7 @@ set nowrapscan
 set number
 " set numberwidth=8
 set path=,./tests,~
+set relativenumber
 set noruler
 set scrolljump=-25
 set scrolloff=2
