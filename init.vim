@@ -4,8 +4,6 @@ filetype off
 call plug#begin(stdpath('data') . '/plugged')
 Plug 'tpope/vim-sensible'
 Plug 'rust-lang/rust.vim'
-" Plug 'vim-airline/vim-airline'
-" Plug 'vim-airline/vim-airline-themes'
 " Plug 'nanotech/jellybeans.vim'
 Plug 'vim-syntastic/syntastic'
 Plug 'NLKNguyen/papercolor-theme'
@@ -18,6 +16,9 @@ Plug 'ctrlpvim/ctrlp.vim'
 " Plug 'majutsushi/tagbar'
 Plug 'dag/vim-fish'
 Plug 'tpope/vim-commentary'
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
+Plug 'itchyny/lightline.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " easytags is unmaintained and doesn't seem to work well with universal-ctags.
