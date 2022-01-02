@@ -37,7 +37,7 @@ set autowriteall
 set backspace=indent,eol,start
 set backupcopy=auto,breakhardlink
 set cdpath=,~,~/src,..
-set cmdheight=2
+set cmdheight&
 if version >= 700 && has("insert_expand")
         set completeopt=menu,preview
 endif
@@ -57,15 +57,15 @@ set nowrapscan
 set number
 " set numberwidth=8
 set path=,./tests,~
-set relativenumber
+set norelativenumber
 set noruler
 set scrolljump=-25
 set scrolloff=2
 set shiftround
 set showbreak=
-set showcmd
+set noshowcmd
 set showmatch
-set showmode
+set noshowmode
 " set shortmess+=c
 set suffixes+=.beam
 set timeout& ttimeout&
@@ -113,9 +113,9 @@ autocmd BufRead *.txt setlocal formatoptions=t tw=74
 
 autocmd FileType erlang setlocal sts=4 et tw=72 fo+=oc comments=:%%%,:%%,:%
 
-au WinLeave * set nocursorline nocursorcolumn
-au WinEnter * set cursorline cursorcolumn
-set cursorline cursorcolumn
+au WinLeave * set nocursorline
+au WinEnter * set cursorline
+set cursorline
 
 " default of going to ex mode not very useful, so instead Q formats text
 map Q gq
@@ -170,9 +170,6 @@ match MergeMarker /^[<=>\|]\{7\}\( [A-Z]\+\)?$/
 
 highlight LineNr cterm=none
 highlight Folded cterm=none
-
-au WinLeave * set nocursorline nocursorcolumn
-au WinEnter * set cursorline cursorcolumn
 
 if &term == "screen"
         set t_ts=]2;
