@@ -20,12 +20,8 @@ Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'morhetz/gruvbox'
 
-" easytags is unmaintained and doesn't seem to work well with universal-ctags.
-" Plug 'xolox/vim-misc'
-" Plug 'xolox/vim-easytags'
-" Plug 'universal-ctags/ctags'
-" Plug 'ludovicchabant/vim-gutentags'
 call plug#end()
 
 filetype plugin indent on
@@ -235,7 +231,7 @@ imap <S-Insert> "+p
 "
 au BufNewFile,BufRead *.go setlocal noet ts=4 sw=4 sts=4
 
-colorscheme PaperColor
+colorscheme gruvbox
 
 let g:airline_theme='papercolor'
 
