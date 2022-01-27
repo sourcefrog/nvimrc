@@ -47,6 +47,7 @@ set expandtab
 " set noequalalways
 set foldmethod=indent nofoldenable
 set foldminlines=4
+set grepprg=rg\ --vimgrep
 set history=1000
 nohlsearch " don't show whatever we were looking for last time until we search again
 set hlsearch
@@ -180,10 +181,6 @@ endif
 if $USER != "root"
         set modeline
 endif
-
-" Use global as grep application
-" set grepprg=global\ -x
-" set grepformat=%*[^\ ]%*[\ ]%l%*[\ ]%f%*[\ ]%m
 
 " map <silent> <C-\> :grep <C-R>=expand("<cword>")<CR><CR><CR>
 " map <silent> <C-_> :grep! -r <C-R>=expand("<cword>")<CR><CR>:cw<CR>
