@@ -35,7 +35,7 @@ set backupcopy=auto,breakhardlink
 set cdpath=,~,~/src,..
 set cmdheight&
 if version >= 700 && has("insert_expand")
-        set completeopt=menu,preview
+        set completeopt=longest
 endif
 " set dir=~/.vimswap
 set display=lastline " show as much as will fit on last line, not just '@'
@@ -112,7 +112,7 @@ autocmd FileType erlang setlocal sts=4 et tw=72 fo+=oc comments=:%%%,:%%,:%
 
 au WinLeave * set nocursorline
 au WinEnter * set cursorline
-set cursorline
+set cursorline nocursorcolumn
 
 " default of going to ex mode not very useful, so instead Q formats text
 map Q gq
@@ -155,7 +155,7 @@ let python_highlight_builtins = 1
 let python_highlight_space_errors = 0
 let python_highlight_exceptions = 1
 
-set printoptions=syntax:a,formfeed:y
+set printoptions=syntax:a,paper:letter,duplex:long
 set printheader=%<%f%h%m%=%{strftime(\"%Y-%m-%d\ %a\ %l:%M%P\")}\ \ Page\ %N
 
 " use space to page through files like less; inconsistent with
