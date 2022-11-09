@@ -259,19 +259,18 @@ let g:ctrlp_prompt_mappings = {
     \ }
 " Only cache in big directories, otherwise it's annoying when a file is
 " added.
-let g:ctrlp_use_caching = 10000
+let g:ctrlp_use_caching = 100
 " let g:ctrlp_extensions = ['tag', 'buffertag', 'quickfix', 'dir', 'rtscript', 'undo', 'line', 'changes', 'mixed', 'bookmarkdir']
 let g:ctrlp_extensions = ['quickfix', 'dir', 'undo', 'line', 'changes', 'mixed', 'bookmarkdir', 'autoignore']
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " for vim-coc, from https://github.com/neoclide/coc.nvim
 
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
+inoremap <silent><expr> <C-n> coc#pum#visible() ? coc#pum#next(1) : "\<C-n>"
+inoremap <silent><expr> <C-p> coc#pum#visible() ? coc#pum#prev(1) : "\<C-p>"
+inoremap <silent><expr> <down> coc#pum#visible() ? coc#pum#next(0) : "\<down>"
+inoremap <silent><expr> <up> coc#pum#visible() ? coc#pum#prev(0) : "\<up>"
 
 function! s:check_back_space() abort
   let col = col('.') - 1
