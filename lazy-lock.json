@@ -1,0 +1,13 @@
+{
+  "ctrlp.vim": { "branch": "master", "commit": "7c972cb19c8544c681ca345c64ec39e04f4651cc" },
+  "lazy.nvim": { "branch": "main", "commit": "59335c5b9d116f5d3948f833288a89e2a829a005" },
+  "nvim-lspconfig": { "branch": "master", "commit": "eb1b53162755888ff75e495797071644d983bff7" },
+  "rust-tools.nvim": { "branch": "master", "commit": "0cc8adab23117783a0292a0c8a2fbed1005dc645" },
+  "rust.vim": { "branch": "master", "commit": "889b9a7515db477f4cb6808bef1769e53493c578" },
+  "tokyonight.nvim": { "branch": "main", "commit": "e89caa3ad6d8da9d0dd981ec74a82c55adc61ffd" },
+  "vim-eunuch": { "branch": "master", "commit": "67f3dd32b4dcd1c427085f42ff5f29c7adc645c6" },
+  "vim-fugitive": { "branch": "master", "commit": "99db68d9b3304580bd383da7aaee05c7a954a344" },
+  "vim-sensible": { "branch": "master", "commit": "3e878abfd6ddc6fb5dba48b41f2b72c3a2f8249f" },
+  "vim-surround": { "branch": "master", "commit": "3d188ed2113431cf8dac77be61b842acb64433d9" },
+  "vim-unimpaired": { "branch": "master", "commit": "6d44a6dc2ec34607c41ec78acf81657248580bf1" }
+}
