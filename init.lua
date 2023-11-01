@@ -15,6 +15,7 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
   use 'neovim/nvim-lspconfig'
   use 'simrat39/rust-tools.nvim'
+  use 'ctrlpvim/ctrlp.vim'
 
   -- My plugins here
   -- use 'foo1/bar1.nvim'
